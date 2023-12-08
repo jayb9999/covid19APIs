@@ -1,0 +1,67 @@
+POST http://localhost:3000/register/
+Content-Type: application/json
+
+{
+  "username": "mani123",
+  "name": "Mani",
+  "password": "mani123",
+  "gender": "Male",
+  "location": "vijayawada"
+}
+
+###
+POST http://localhost:3000/login/
+Content-Type: application/json
+
+{
+  "username": "mani123",
+  "password": "mani123",
+}
+
+###
+GET http://localhost:3000/states/
+Authorization: Bearer JWT_TOKEN
+
+###
+GET http://localhost:3000/states/1/
+Authorization: Bearer JWT_TOKEN
+
+###
+POST http://localhost:3000/districts/
+Authorization: Bearer JWT_TOKEN
+Content-Type: application/json
+
+{
+  "districtName": "Bagalkot",
+  "stateId": 3,
+  "cases": 2323,
+  "cured": 2000,
+  "active": 315,
+  "deaths": 8
+}
+
+###
+GET http://localhost:3000/districts/764/
+Authorization: Bearer JWT_TOKEN
+
+###
+DELETE http://localhost:3000/districts/764/
+Authorization: Bearer JWT_TOKEN
+
+###
+PUT http://localhost:3000/districts/763/
+Authorization: Bearer JWT_TOKEN
+Content-Type: application/json
+
+{
+  "districtName": "Nadia",
+  "stateId": 3,
+  "cases": 9628,
+  "cured": 6524,
+  "active": 3000,
+  "deaths": 104
+}
+
+###
+GET http://localhost:3000/states/2/stats/
+Authorization: Bearer JWT_TOKEN
